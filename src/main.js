@@ -1,7 +1,6 @@
 const path = require('path')
 const url = require('url')
 const { app, BrowserWindow, globalShortcut } = require('electron')
-const prepareNext = require('./load-nextjs')
 const prepareService = require('./load-express')
 
 if (require('electron-squirrel-startup')) app.quit()
@@ -32,9 +31,6 @@ const createWindow = () => {
 
 app
   .whenReady()
-  // .then(async () => {
-  //   await prepareNext('render', 3000, true)
-  // })
   .then(async () => {
     await prepareService('../../books-service/app.js', 21216)
   })
