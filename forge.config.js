@@ -7,27 +7,27 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        "authors": "Alice and Bob",
-        "description": "An example Electron app"
-      }
+        'authors': 'Alice and Bob',
+        'description': 'An example Electron app',
+      },
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin', 'win32']
+      platforms: ['darwin', 'win32'],
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {}
+      config: {},
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {}
-    }
+      config: {},
+    },
   ],
   plugins: [
     {
       name: '@electron-forge/plugin-auto-unpack-natives',
-      config: {}
-    }
-  ]
-}
+      config: {},
+    },
+  ],
+};

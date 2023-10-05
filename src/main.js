@@ -1,9 +1,9 @@
-const path = require('path')
-const url = require('url')
-const { app, BrowserWindow, globalShortcut } = require('electron')
-const prepareService = require('./load-express')
+const path = require('path');
+const url = require('url');
+const { app, BrowserWindow, globalShortcut } = require('electron');
+const prepareService = require('./load-express');
 
-if (require('electron-squirrel-startup')) app.quit()
+if (require('electron-squirrel-startup')) app.quit();
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -11,37 +11,37 @@ const createWindow = () => {
     height: 960,
     webPreferences: {
       nodeIntegration: false,
-      contextIsolation: false
-    }
-  })
+      contextIsolation: false,
+    },
+  });
 
-  const isPackaged = app.isPackaged
+  const isPackaged = app.isPackaged;
   // const isPackaged = true
 
   win.loadURL(
     isPackaged
       ? url.format({
-        pathname: path.join(__dirname, '../../books-render/dist/index.html'),
+        pathname: path.join(__dirname, '../dist/render/index.html'),
         protocol: 'file:',
-        slashes: true
+        slashes: true,
       })
-      : 'http://localhost:3000'
-  )
-}
+      : 'http://localhost:3000',
+  );
+};
 
 app
   .whenReady()
   .then(async () => {
-    await prepareService('../../books-service/dist/app.js', 21216)
+    await prepareService('../dist/service/app.js', 3001);
   })
   .then(() => {
-    createWindow()
+    createWindow();
   })
   .then(() => {
-    globalShortcut.register('f5', function () {
-    })
-    globalShortcut.register('CommandOrControl+R', function () {
-    })
-  })
+    globalShortcut.register('f5', function() {
+    });
+    globalShortcut.register('CommandOrControl+R', function() {
+    });
+  });
 
-app.on('window-all-closed', app.quit)
+app.on('window-all-closed', app.quit);
