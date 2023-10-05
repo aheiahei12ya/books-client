@@ -1,19 +1,19 @@
-const { createServer } = require('http')
+const { createServer } = require('http');
 
 
-const { app } = require('electron')
+const { app } = require('electron');
 
 const runServer = (dir, port) => {
-  const requestHandler = require(dir)
-  requestHandler.set('port', port || 3001);
+  const expressApp = require(dir).app;
+  expressApp.set('port', port || 3001);
 
-  const server = createServer(requestHandler)
+  const server = createServer(expressApp);
 
   server.listen(port || 3001, () => {
-    app.on('before-quit', () => server.close())
-  })
-}
+    app.on('before-quit', () => server.close());
+  });
+};
 
 module.exports = async (dir, port) => {
-  await runServer(dir, port)
-}
+  await runServer(dir, port);
+};

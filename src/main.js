@@ -32,7 +32,7 @@ const createWindow = () => {
 app
   .whenReady()
   .then(async () => {
-    await prepareService('../../books-service/app.js', 21216)
+    await prepareService('../../books-service/dist/app.js', 21216)
   })
   .then(() => {
     createWindow()
