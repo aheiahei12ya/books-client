@@ -11,7 +11,7 @@
     "make-win": "electron-forge make --arch x64 --platform win32"
   },
   "dependencies": {
-    "@types/node": "20.3.1",
+    "@types/node": "20.11.16",
     "app-root-path": "^3.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -21,16 +21,16 @@
     "module-alias": "^2.2.3",
     "morgan": "^1.10.0",
     "next": "13.4.7",
-    "sqlite3": "^5.1.6",
-    "typeorm": "^0.3.17"
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.2.1",
-    "@electron-forge/maker-deb": "^6.2.1",
-    "@electron-forge/maker-rpm": "^6.2.1",
-    "@electron-forge/maker-squirrel": "^6.2.1",
-    "@electron-forge/maker-zip": "^6.2.1",
-    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
-    "electron": "^25.2.0"
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
+    "electron": "^28.2.1"
   }
 }
